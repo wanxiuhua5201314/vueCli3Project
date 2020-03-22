@@ -30,11 +30,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 500px;
+  height: 100%;
   width: 100%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center */
 }
 html,body{
   width:100%;

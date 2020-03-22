@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <div class="login-form">
   <el-form :model="formData" label-width="80px">
   <el-form-item label="用户名:">
     <el-input v-model="formData.userName" placeholder="用户"></el-input>
@@ -11,6 +12,7 @@
     <el-button type="primary" @click="onSubmit">登陆</el-button>
   </el-form-item>
 </el-form>
+    </div>
   </div>
 </template>
 
@@ -37,10 +39,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hello{
-  /* width:40px;
-  height:40px; */
+   width:100%;
+   height:100%;
+   .login-form{
+     position:absolute;
+     top:50%;
+     left:50%;
+     transform: translate(-50%,-50%)
+   }
 }
 
 </style>
