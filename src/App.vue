@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-  <hello-world></hello-world>
+  <login-page v-show='loginPageShow'></login-page>
+   <main-page v-show='mainPageShow'></main-page>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import loginPage from './components/loginPage.vue'
+import mainPage from './components/mainPage.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    loginPage,
+    mainPage
+  },
+  data(){
+    return{
+      loginPageShow:true,
+      mainPageShow:false,
+    }
   }
 }
 </script>
@@ -28,8 +36,8 @@ export default {
   justify-content: center;
   align-items: center
 }
-*{
-  padding:0;
-  margin: 0
+html,body{
+  width:100%;
+  height:100%
 }
 </style>
