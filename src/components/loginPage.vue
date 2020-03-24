@@ -6,12 +6,15 @@
     <el-input v-model="formData.userName" placeholder="用户"></el-input>
   </el-form-item>
   <el-form-item label="密码:">
-    <el-input v-model="formData.passWord" placeholder="密码"></el-input>
+    <el-input v-model="formData.passWord"  type="password" placeholder="密码"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="onSubmit">登陆</el-button>
+     <el-button type="primary" @click="saveInfo">保存信息</el-button>
+      <el-button type="primary" @click="test">测试localStorage</el-button>
   </el-form-item>
 </el-form>
+    {{localInfo.userName}} {{localInfo.passWord}}
     </div>
   </div>
 </template>
@@ -24,6 +27,10 @@ export default {
        formData:{
          userName:'',
          passWord:''
+       },
+       localInfo:{
+          userName:'',
+         passWord:''
        }
     }
   },
@@ -34,6 +41,12 @@ export default {
     onSubmit(){
       this.$parent.loginPageShow=false;
       this.$parent.mainPageShow=true;
+    },
+    saveInfo(){
+      localStorage.setItem('userInfo',JSON.stringify(JSON.parse(this.formData)))
+    },
+    test(){
+      this.localInfo=JSON.parse(JSON.stringify(localStorage.getItem('userInfo')));
     }
   }
 }
