@@ -1,23 +1,14 @@
 <template>
   <div id="app">
-  <login-page v-show='loginPageShow'></login-page>
-   <main-page v-show='mainPageShow'></main-page>
+   <router-view></router-view>
   </div>
 </template>
 
 <script>
-import loginPage from './components/loginPage.vue'
-import mainPage from './components/mainPage.vue'
 export default {
   name: 'app',
-  components: {
-    loginPage,
-    mainPage
-  },
   data(){
     return{
-      loginPageShow:true,
-      mainPageShow:false,
     }
   }
 }
