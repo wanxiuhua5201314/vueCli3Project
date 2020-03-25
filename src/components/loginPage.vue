@@ -40,6 +40,8 @@ export default {
   props: {
     msg: String
   },
+  mounted(){
+  },
   methods:{
     onSubmit(){
       this.$parent.loginPageShow=false;
@@ -53,18 +55,22 @@ export default {
     },
     openTwoWindow(){
       // window.open("http://localhost:8081/#/page1",'width=1920,height=990');
-     let myWindow=window.open('http://localhost:8081/#/page1','','width=1500,height=900');
-     myWindow.focus();//把键盘焦点给予一个窗口
-     window.open('http://localhost:8081/#/page2','','width=1500,height=900');
+     let myPage1=window.open('http://localhost:8081/#/page1','','width=1500,height=900');
+     sessionStorage.setItem("pageWindow1",myPage1);
+     myPage1.focus();//把键盘焦点给予一个窗口
+     let myPage2= window.open('http://localhost:8081/#/page2','','width=1500,height=900');
+     sessionStorage.setItem("pageWindow2",myPage2)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+$-bg-color:red;
 .hello{
    width:100%;
    height:100%;
+   color:$-bg-color;
    .login-form{
      position:absolute;
      top:50%;

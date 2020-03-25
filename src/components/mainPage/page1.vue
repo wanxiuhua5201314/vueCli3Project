@@ -1,7 +1,10 @@
 <template>
   <div class="demo-page1">
     <div class="page-title">这是新窗口页面1,嵌入了有道云笔记的页面 </div>
-    <div class="page-content"><iframe :src="src" frameborder='0' scrolling="auto" height="100%"  width="90%"></iframe></div>
+    <div class="page-content">
+      <iframe :src="src" frameborder='0' scrolling="auto" height="30%"  width="40%"></iframe>
+      <el-button type="priamry" @click="sendInfo">给窗口2发送消息 <span class="color:red">还未测试完成</span> </el-button> 
+    </div>
   </div>
 </template>
 <script>
@@ -13,6 +16,12 @@ export default {
   },
   mounted(){
     document.title="page1";
+  },
+  methods:{
+     sendInfo(){
+       let pageWindow1=sessionStorage.getItem('pageWindow1','http://localhost:8081/#/page2');
+       pageWindow1.postMessage('我是来自页面1的消息，请查收')
+     }
   }
 }
 </script>
