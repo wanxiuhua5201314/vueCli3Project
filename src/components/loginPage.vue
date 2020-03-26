@@ -54,12 +54,10 @@ export default {
       this.localInfo=JSON.parse(localStorage.getItem('userInfo'));
     },
     openTwoWindow(){
-      // window.open("http://localhost:8081/#/page1",'width=1920,height=990');
+      localStorage.clear();
      let myPage1=window.open('http://localhost:8081/#/page1','','width=1500,height=900');
-     sessionStorage.setItem("pageWindow1",myPage1);
      myPage1.focus();//把键盘焦点给予一个窗口
-     let myPage2= window.open('http://localhost:8081/#/page2','','width=1500,height=900');
-     sessionStorage.setItem("pageWindow2",myPage2)
+      window.open('http://localhost:8081/#/page2','','width=1500,height=900');
     }
   }
 }
