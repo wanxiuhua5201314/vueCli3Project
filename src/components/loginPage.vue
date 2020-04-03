@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'LoginPage',
   data(){
     return{
        formData:{
@@ -55,8 +55,8 @@ export default {
     },
     openTwoWindow(){
       localStorage.clear();
-     let myPage1=window.open('http://localhost:8081/#/page1','','width=1500,height=900');
-     myPage1.focus();//把键盘焦点给予一个窗口
+    //  let myPage1=window.open('http://localhost:8081/#/page1','','width=1500,height=900');
+    //  myPage1.focus();//把键盘焦点给予一个窗口
       window.open('http://localhost:8081/#/page2','','width=1500,height=900');
     }
   }

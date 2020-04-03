@@ -3,6 +3,15 @@
         这是新窗口页面2
         <br/>
         接收到的消息是：{{reciveInfo}}
+        <br/>
+   <div class="all-components">
+        <span>引入自己npm上的组件1:</span>
+        <div class="one-components"><components-one></components-one></div>
+  </div>
+  <div class="all-components">
+       <span > 引入自己npm上的组件2:</span>
+        <components-two></components-two>
+  </div>
   </div>
 </template>
 <script>
@@ -22,3 +31,18 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+   .all-components{
+     width: 100%;
+     height: 60px;
+     display: flex;
+     align-items: center;
+     span + span{
+       margin-left:20px;
+     }
+     .one-components{
+       height:40px;
+       width:80px;
+     }
+   }
+</style>
